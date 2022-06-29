@@ -15,7 +15,9 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip'
-          run: pip install -r requirements.txt
+      
+      - name: Install dependencies
+        run: pip install -r requirements.txt
         
       - name: Build EXE
         run: python -m nuitka --standalone --onefile --output-dir="build" kasa_cli
