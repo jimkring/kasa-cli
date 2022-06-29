@@ -3,7 +3,7 @@ name: Build Windows EXE
 on: workflow_dispatch
 
 jobs:
-  Build Windows EXE:
+  Build-Windows-EXE:
     runs-on: windows-latest
     steps:
       
