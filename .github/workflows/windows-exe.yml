@@ -10,22 +10,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
       
-      - name: Install poetry
-        run: pipx install poetry
-      
       - name: Set up python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-          cache: 'poetry'
-          
-      - name: Install Dependencies
-        run: poetry install --no-interaction --no-root
-        
-      - name: Run tests
-        run: poetry run pytest
+          cache: 'pip'
+          run: pip install -r requirements.txt
         
       - name: Build EXE
-        run: poetry run python -m nuitka --standalone --onefile --output-dir="build" kasa_cli
+        run: python -m nuitka --standalone --onefile --output-dir="build" kasa_cli
 
-          
