@@ -26,6 +26,6 @@ jobs:
         run: poetry run pytest
         
       - name: Build EXE
-        run: poetry run nuitka --standalone --onefile --output-dir="build" kasa_cli
+        run: poetry run python -m nuitka --standalone --onefile --output-dir="build" kasa_cli
 
           
