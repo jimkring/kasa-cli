@@ -23,12 +23,12 @@ jobs:
         uses: actions/cache@v1
         with:
           path: C:\Users\runneradmin\AppData\Local\Nuitka
-          key: ${{ runner.OS }}-nuitka-cache-${{ hashFiles('**/requirements.txt') }}
+          key: ${{ runner.OS }}-nuitka-cache-${{ hashFiles('**/requirements*.txt') }}
           restore-keys: |
             ${{ runner.OS }}-nuitka-cache-
 
       - name: Build EXE
-        run: yes | python -m nuitka --standalone --onefile --output-dir="build" kasa_cli
+        run: yes | python -m nuitka --standalone --onefile --enable-plugin=anti-bloat --output-dir="build" kasa_cli
 
       - name: Upload EXE Artifact
       - uses: actions/upload-artifact@v3

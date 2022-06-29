@@ -1,9 +1,2 @@
-# dev
-pip-tools
 
-# build
-pytest
-Nuitka
-
-# source deps
 python-kasa
