@@ -2,3 +2,4 @@
 pip-tools
 pytest
 Nuitka
+ordered-set
