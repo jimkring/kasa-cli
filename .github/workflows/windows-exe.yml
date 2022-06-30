@@ -1,9 +1,9 @@
 name: Build Windows EXE
 
 on:
-  - workflow_dispatch:
-  - push:
-    - branch: main
+  workflow_dispatch:
+  push:
+    branch: main
 
 jobs:
   Build-Windows-EXE:
