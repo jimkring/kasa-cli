@@ -35,7 +35,7 @@ jobs:
         run: yes | python -m nuitka --standalone --onefile --enable-plugin=anti-bloat --output-dir="build" kasa_cli
 
       - name: Upload EXE Artifact
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: Windows EXE
           path: build/*.exe
