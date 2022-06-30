@@ -32,17 +32,18 @@ jobs:
             ${{ runner.OS }}-nuitka-cache-
 
       - name: Build EXE
-        run: yes | python -m nuitka ^
-          --standalone ^
-          --onefile ^
-          --enable-plugin=anti-bloat ^
-          --nofollow-import-to=pytest ^
-          --nofollow-import-to=zipp ^
-          --nofollow-import-to=colorama ^
-          --nofollow-import-to=setuptools ^
-          --nofollow-import-to=distutils ^
-          --nofollow-import-to=cryptography ^
-          --output-dir="build" ^
+        run: |
+          yes | python -m nuitka `
+          --standalone `
+          --onefile `
+          --enable-plugin=anti-bloat `
+          --nofollow-import-to=pytest `
+          --nofollow-import-to=zipp `
+          --nofollow-import-to=colorama `
+          --nofollow-import-to=setuptools `
+          --nofollow-import-to=distutils `
+          --nofollow-import-to=cryptography `
+          --output-dir="build" `
           kasa_cli
 
       - name: Upload EXE Artifact
