@@ -46,6 +46,7 @@ jobs:
           --output-dir="build" `
           --low-memory `
           --jobs=1 `
+          --lto=yes `
           kasa_cli
 
       - name: Upload EXE Artifact
