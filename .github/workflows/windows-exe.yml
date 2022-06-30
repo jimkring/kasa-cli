@@ -44,6 +44,7 @@ jobs:
           --nofollow-import-to=distutils `
           --nofollow-import-to=cryptography `
           --output-dir="build" `
+          --low-memory `
           kasa_cli
 
       - name: Upload EXE Artifact
