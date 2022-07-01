@@ -32,7 +32,7 @@ jobs:
             ${{ runner.OS }}-nuitka-cache-
 
       - name: Build EXE
-        timeout-minutes: 5
+        timeout-minutes: 10
         run: |
           $ErrorActionPreference = 'Stop'
           yes | python -m nuitka `
