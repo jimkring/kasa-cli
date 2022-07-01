@@ -2,4 +2,5 @@
 pip-tools
 pytest
 Nuitka
-ordered-set
+ordered-set # nuitka compile performance helper
+zstandard # for nuitka's onefile compression

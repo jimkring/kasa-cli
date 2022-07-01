@@ -47,6 +47,8 @@ tomli==2.0.1
     #   pytest
 wheel==0.37.1
     # via pip-tools
+zstandard==0.18.0
+    # via -r requirements-dev.in
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
