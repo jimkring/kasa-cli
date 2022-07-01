@@ -32,7 +32,7 @@ jobs:
             ${{ runner.OS }}-nuitka-cache-
 
       - name: Build EXE
-        timeout-minutes: 10
+        timeout-minutes: 5
         run: |
           $ErrorActionPreference = 'Stop'
           yes | python -m nuitka `
@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Compilation Report
-          path: ${{ github.workspace }}/**/compilation_report.xml
+          path: compilation_report.xml
 
       - name: Upload EXE Artifact
         uses: actions/upload-artifact@v3
