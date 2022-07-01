@@ -1,5 +1,5 @@
 # kasa-cli
- A command-line application for TP-Link Kasa Smarthome products.
+ A command-line application (standalone executable) for TP-Link Kasa Smarthome products like smart WiFi switches and more.
 
  Note: there's really not much to this project except for build scripts:
 
