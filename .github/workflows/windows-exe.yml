@@ -35,7 +35,8 @@ jobs:
         timeout-minutes: 5
         run: |
           $ErrorActionPreference = 'Stop'
-          yes | python -m nuitka `
+          python -m nuitka `
+          --assume-yes-for-downloads `
           --report=compilation_report.xml `
           --standalone `
           --onefile `
