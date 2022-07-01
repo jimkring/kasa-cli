@@ -34,12 +34,15 @@ jobs:
       - name: Build EXE
         run: |
           $ErrorActionPreference = 'Stop'
-          yes | python -m nuitka `
-          --report=compilation_report.xml `
-          --standalone `
-          --onefile `
-          --output-dir="build" `
-          kasa_cli
+          Start-Job {                
+              Set-Location $using:PWD;
+              yes | python -m nuitka `
+              --report=compilation_report.xml `
+              --standalone `
+              --onefile `
+              --output-dir="build" `
+              kasa_cli
+          } | Wait-Job -Timeout 60
 
       - name: Upload Compilation Report
         uses: actions/upload-artifact@v3
