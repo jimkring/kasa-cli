@@ -34,7 +34,7 @@ jobs:
       - name: Build EXE
         run: |
           $ErrorActionPreference = 'Stop'
-          python -m nuitka `
+          yes | python -m nuitka `
           --report=compilation_report.xml `
           --standalone `
           --onefile `
