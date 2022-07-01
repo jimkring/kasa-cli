@@ -34,6 +34,7 @@ jobs:
       - name: Build EXE
         run: |
           yes | python -m nuitka `
+          --report=compilation_report.xml
           --standalone `
           --onefile `
           --enable-plugin=anti-bloat `
@@ -48,6 +49,12 @@ jobs:
           --jobs=1 `
           --lto=yes `
           kasa_cli
+
+      - name: Upload Compilation Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: Compilation Report
+          path: compilation_report.xml
 
       - name: Upload EXE Artifact
         uses: actions/upload-artifact@v3
