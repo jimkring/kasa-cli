@@ -34,7 +34,7 @@ jobs:
       - name: Build EXE
         run: |
           yes | python -m nuitka `
-          --report=compilation_report.xml
+          --report=compilation_report.xml `
           --standalone `
           --onefile `
           --enable-plugin=anti-bloat `
