@@ -33,21 +33,12 @@ jobs:
 
       - name: Build EXE
         run: |
-          yes | python -m nuitka `
+          $ErrorActionPreference = 'Stop'
+          python -m nuitka `
           --report=compilation_report.xml `
           --standalone `
           --onefile `
-          --enable-plugin=anti-bloat `
-          --nofollow-import-to=pytest `
-          --nofollow-import-to=zipp `
-          --nofollow-import-to=colorama `
-          --nofollow-import-to=setuptools `
-          --nofollow-import-to=distutils `
-          --nofollow-import-to=cryptography `
           --output-dir="build" `
-          --low-memory `
-          --jobs=1 `
-          --lto=yes `
           kasa_cli
 
       - name: Upload Compilation Report
