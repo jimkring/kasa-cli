@@ -32,17 +32,15 @@ jobs:
             ${{ runner.OS }}-nuitka-cache-
 
       - name: Build EXE
+        timeout-minutes: 3
         run: |
-          $ErrorActionPreference = 'Stop'
-          Start-Job {                
-              Set-Location $using:PWD;
-              yes | python -m nuitka `
-              --report=compilation_report.xml `
-              --standalone `
-              --onefile `
-              --output-dir="build" `
-              kasa_cli
-          } | Wait-Job -Timeout 300
+        $ErrorActionPreference = 'Stop'
+            yes | python -m nuitka `
+            --report=compilation_report.xml `
+            --standalone `
+            --onefile `
+            --output-dir="build" `
+            kasa_cli
 
       - name: Upload Compilation Report
         uses: actions/upload-artifact@v3
