@@ -6,6 +6,11 @@
  - The code is simply a wrapper around the awesome [python-kasa](https://github.com/python-kasa/python-kasa) library.
  - The executable is built with [nuitka](https://github.com/Nuitka/Nuitka), the amazing python compiler that's written in python.
  
+# Installation
+
+- Download the EXE in the [latest release](https://github.com/jimkring/kasa-cli/releases/tag/0.5.0)
+- Call the EXE from the command line, as shown in the examples below 👇🏻
+
 # Example Usage
 Turn Switch OFF  
 `.\kasa_cli.exe --host 192.168.1.118 off`
